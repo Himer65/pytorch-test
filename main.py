@@ -74,7 +74,7 @@ class network(nn.Module):
            nn.BatchNorm1d(123),
            nn.Sigmoid(),
            nn.Linear(123, 10),
-           nn.Softmax(dim=0))
+           nn.Softmax(dim=1))
     def forward(self, x):
         x = self.seq1(x)
         x = self.seq2(x)

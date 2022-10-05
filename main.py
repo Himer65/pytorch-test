@@ -110,7 +110,7 @@ if __name__=='__main__':
        train=True,
        download=True,
        transform=ToTensor(),
-       target_transform=Lambda(lambda y: torch.zeros(10, dtype=torch.float).scatter_(0, torch.tensor(y), value=1)))
+       target_transform=None) #Lambda(lambda y: torch.zeros(10, dtype=torch.float).scatter_(0, torch.tensor(y), value=1))
     loader = torch.utils.data.DataLoader(data, batch_size=50, shuffle=True)  #генератор
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu' #подключить GPU, если имеется
